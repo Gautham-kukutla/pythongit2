@@ -4,11 +4,12 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
+                 withCredentials([usernamePassword(credentialsId: 'gittoken', passwordVariable: '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', usernameVariable: 'Gautham-kukutla')]) {
                 sh'''rm -rf task
                 git clone https://github.com/Gautham-kukutla/pythongit2.git task
                 '''
             }
-        }
+            }}
         stage('Creating Files') {
             steps {
                 sh '''cd task
@@ -28,7 +29,7 @@ pipeline {
                 ./script2.sh
                 git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Gautham-kukutla/pythongit2.git
                 '''
-            }
+                }}
         }
     }
 }
