@@ -1,7 +1,7 @@
 import git
 import os
 print("Repo before")
-repo = git.Repo('/var/lib/jenkins/workspace/pythongit2/task')
+repo = git.Repo('/var/lib/jenkins/workspace/pythongit3/task')
 print("Repo after")
 print('Remotes:')
 for remote in repo.remotes:
@@ -11,9 +11,9 @@ print("remote after")
 with repo.config_writer() as git_config:
     git_config.set_value('user', 'email', 'gautham.kukutla@gmail.com')
     git_config.set_value('user', 'name', 'Gautham-kukutla')
-'''with repo.config_reader() as git_config:
+with repo.config_reader() as git_config:
     print(git_config.get_value('user', 'email'))
-    print(git_config.get_value('user', 'name'))'''
+    print(git_config.get_value('user', 'name'))
 if repo.is_dirty(untracked_files=True):
   print("Changes Detected")
   repo.git.add(all=True)
