@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                 withCredentials([usernamePassword(credentialsId: 'gittoken', passwordVariable: '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', usernameVariable: 'Gautham-kukutla')]) {
+                 withCredentials([usernamePassword(credentialsId: 'gittoken', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                 sh'''rm -rf task
                 git clone https://github.com/Gautham-kukutla/pythongit2.git task
                 '''
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Git Modification Check') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'gittoken', passwordVariable: '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', usernameVariable: 'Gautham-kukutla')]) {
+                withCredentials([usernamePassword(credentialsId: 'gittoken', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
 
                 sh'''pip install GitPython 
                 cd task
