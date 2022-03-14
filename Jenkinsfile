@@ -20,7 +20,7 @@ pipeline {
             steps {
                 /* */
                 sh'''pip install GitPython
-                git config --global url."git@github.com:".insteadOf "https://github.com/"
+                git config --global url."https://github.com/:".insteadOf "git@github.com"
                 cat ~/.gitconfig
                 cd task
                 pwd
