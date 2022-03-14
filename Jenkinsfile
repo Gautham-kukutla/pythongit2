@@ -4,28 +4,28 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                bat'''rm -rf task
-                git clone https://github.com/Gautham-kukutla/python.git task
+                sh'''rm -rf task
+                git clone git@github.com:Gautham-kukutla/pythongit2.git task
                 '''
             }
         }
         stage('Creating Files') {
             steps {
-                bat '''cd task
-                touch file.txt file1.txt file3.txt
+                sh '''cd task
+                touch file.txt 
                 '''
             }
         }
         stage('Git Modification Check') {
             steps {
-                bat'''pip install GitPython
+                sh'''pip install GitPython
                 cd task
                 pwd
-                python python_script.py
+                python3 python_script.py
                 chmod +x script2.sh
-                bash script2.sh
-               '''               
-               
+                ./script2.sh
+                
+                '''
             }
         }
     }
