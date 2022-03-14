@@ -18,9 +18,10 @@ pipeline {
         }
         stage('Git Modification Check') {
             steps {
-                /*git config --global url."git@github.com:".insteadOf "https://github.com/"
-                cat ~/.gitconfig */
-                sh'''pip install GitPython 
+                /* */
+                sh'''pip install GitPython
+                git config --global url."git@github.com:".insteadOf "https://github.com/"
+                cat ~/.gitconfig
                 cd task
                 pwd
                 python3 python_script.py
