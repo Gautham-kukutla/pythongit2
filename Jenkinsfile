@@ -3,8 +3,7 @@ pipeline {
 
     stages {
         stage('Clone') {
-            steps {
-                 
+            steps {  
                 sh'''rm -rf task
                 git clone https://github.com/Gautham-kukutla/pythongit2.git task
                 '''
