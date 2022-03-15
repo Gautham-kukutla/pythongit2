@@ -27,7 +27,7 @@ pipeline {
                 python3 python_script.py
                 chmod +x script2.sh
                 ./script2.sh
-                git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Gautham-kukutla/pythongit2.git
+                
                 '''
                 }}
         }
