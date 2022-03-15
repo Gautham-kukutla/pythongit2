@@ -12,8 +12,9 @@ pipeline {
             }}
         stage('Creating Files') {
             steps {
+                 /*touch file1.txt */
                 sh '''cd task
-                touch file1.txt 
+               
                 '''
             }
         }
